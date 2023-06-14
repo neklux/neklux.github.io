@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adriana con Corazón, Mensaje y Fecha de Jubilación</title>
+  <style>
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+    
+    .heart {
+      color: red;
+      font-size: 50px;
+      line-height: 1;
+      animation: beat 1s infinite ease-in-out;
+    }
+    
+    .star {
+      color: gold;
+      font-size: 50px;
+    }
+    
+    .message {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    
+    .retirement-date {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    
+    .heart {
+      animation: beat 1s infinite ease-in-out;
+    }
+    
+    .heart span {
+      animation: blink 1s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="heart">
+      A&#10084;<span>DRIANA</span>
+    </h1>
+    <div class="message">
+      No te rindas
+    </div>
+    <div class="retirement-date">
+      Tu fecha de jubilación es el [FECHA_JUBILACION]
+    </div>
+  </div>
+
+  <script>
+    // Cálculo de la fecha de jubilación
+    var currentYear = new Date().getFullYear();
+    var retirementYear = currentYear + (67 - 37);
+    var retirementDate = "31 de diciembre de " + retirementYear;
+
+    // Mostrar la fecha de jubilación en la página
+    var retirementDateElement = document.querySelector(".retirement-date");
+    retirementDateElement.textContent = "Tu fecha de jubilación es el " + retirementDate;
+  </script>
+</body>
+</html>
